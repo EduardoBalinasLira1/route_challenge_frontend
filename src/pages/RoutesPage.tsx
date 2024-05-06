@@ -36,7 +36,7 @@ const MyComponent = () => {
       if(currentPage <1) {
         setCurrentPage(1)
       }
-      const response = await fetch(`http://localhost:8080/api/routes?page=${currentPage}&pageSize=${10}`)
+      const response = await fetch(`https://route-challenge-backend.onrender.com/api/routes?page=${currentPage}&pageSize=${10}`)
       const { data } = await response.json()
       
       setAllRoutes(data.data)
@@ -98,7 +98,7 @@ payload = {
   },
   body: JSON.stringify(routes),
 }
-url = "http://localhost:8080/api/routes/" + routes._id
+url = "https://route-challenge-backend.onrender.com/api/routes/" + routes._id
 
     }else {
       payload = {
@@ -108,7 +108,7 @@ url = "http://localhost:8080/api/routes/" + routes._id
         },
         body: JSON.stringify(routes),
       }
-      url = "http://localhost:8080/api/routes"
+      url = "https://route-challenge-backend.onrender.com/api/routes"
     }
 
     const response = await fetch(url, payload);
@@ -142,7 +142,7 @@ url = "http://localhost:8080/api/routes/" + routes._id
             "Content-Type": "application/json",
           },
     }
-    const response = await fetch("http://localhost:8080/api/routes/" + data._id, payload)
+    const response = await fetch("https://route-challenge-backend.onrender.com/api/routes/" + data._id, payload)
     setReload(!reload)
 
     const dataResponse = await response.json()    

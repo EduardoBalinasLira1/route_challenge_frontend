@@ -45,7 +45,7 @@ const VehiclePage = () => {
         setCurrentPage(1)
       }
       const response = await fetch(
-        `http://localhost:8080/api/vehicles?page=${currentPage}&pageSize=${10}`
+        `https://route-challenge-backend.onrender.com/api/vehicles?page=${currentPage}&pageSize=${10}`
       );
       const { data } = await response.json();
       
@@ -74,7 +74,7 @@ const VehiclePage = () => {
             },
             body: JSON.stringify(formData),
           };
-          url = "http://localhost:8080/api/vehicles"
+          url = "https://route-challenge-backend.onrender.com/api/vehicles"
     }else {
         payload = {
             method: "PATCH",
@@ -83,7 +83,7 @@ const VehiclePage = () => {
             },
             body: JSON.stringify(formData),
           };
-          url = "http://localhost:8080/api/vehicles/" + formData._id
+          url = "https://route-challenge-backend.onrender.com/api/vehicles/" + formData._id
     }
    
 
@@ -133,7 +133,7 @@ const VehiclePage = () => {
             "Content-Type": "application/json",
           },
     }
-    const response = await fetch("http://localhost:8080/api/vehicles/" + data._id, payload)
+    const response = await fetch("https://route-challenge-backend.onrender.com/api/vehicles/" + data._id, payload)
     setReload(!reload)
 
     const dataResponse = await response.json()

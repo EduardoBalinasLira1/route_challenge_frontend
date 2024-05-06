@@ -28,7 +28,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const loadOperator = async () => {
-      const response = await fetch("http://localhost:8080/api/operators");
+      const response = await fetch("https://route-challenge-backend.onrender.com/api/operators");
       const { data } = await response.json();
       setOperators(data.data);
     };
@@ -37,7 +37,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch("http://localhost:8080/api/routes");
+      const response = await fetch("https://route-challenge-backend.onrender.com/api/routes");
       const { data } = await response.json();
       console.log(data);
 
@@ -48,7 +48,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const loadVehicles = async () => {
-      const response = await fetch("http://localhost:8080/api/vehicles");
+      const response = await fetch("https://route-challenge-backend.onrender.com/api/vehicles");
       const { data } = await response.json();
       setVehicles(data.data);
       console.log(data);
@@ -58,7 +58,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch("http://localhost:8080/api/trips");
+      const response = await fetch("https://route-challenge-backend.onrender.com/api/trips");
       const { data } = await response.json();
       console.log(data);
 
@@ -104,7 +104,7 @@ const HomePage = () => {
       body: JSON.stringify(tripObject),
     };
 
-    const response = await fetch("http://localhost:8080/api/trips", payload);
+    const response = await fetch("https://route-challenge-backend.onrender.com/api/trips", payload);
 
     if (!response.ok) {
       console.log("falle");

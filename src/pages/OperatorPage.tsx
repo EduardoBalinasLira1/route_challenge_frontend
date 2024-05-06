@@ -40,7 +40,7 @@ const OperatorPage = () => {
       if(currentPage <1) {
         setCurrentPage(1)
       }
-        const response = await fetch(`http://localhost:8080/api/operators?page=${currentPage}&pageSize=${10}`)
+        const response = await fetch(`https://route-challenge-backend.onrender.com/api/operators?page=${currentPage}&pageSize=${10}`)
         const {data} = await response.json()
         setOperators(data.data)
     }
@@ -69,7 +69,7 @@ const OperatorPage = () => {
         },
         body: JSON.stringify(formData)
     }
-    url = "http://localhost:8080/api/operators/" + formData._id
+    url = "https://route-challenge-backend.onrender.com/api/operators/" + formData._id
     } else {
       payload = {
         method: 'POST',
@@ -78,7 +78,7 @@ const OperatorPage = () => {
         },
         body: JSON.stringify(formData)
     }
-    url = "http://localhost:8080/api/operators"
+    url = "https://route-challenge-backend.onrender.com/api/operators"
     }
     const response = await fetch(url, payload )
 
@@ -118,7 +118,7 @@ const OperatorPage = () => {
             "Content-Type": "application/json",
           },
     }
-    const response = await fetch("http://localhost:8080/api/operators/" + data._id, payload)
+    const response = await fetch("https://route-challenge-backend.onrender.com/api/operators/" + data._id, payload)
     setReload(!reload)
 
     const dataResponse = await response.json()    
